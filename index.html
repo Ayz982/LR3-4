@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Компоненти</title>
+
+    <!-- Підключення Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        xintegrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .cursive-font {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .hero-section {
+            background-image: url('images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+        }
+
+        .navbar-nav .nav-link.active {
+            color: #ffbe33 !important;
+        }
+
+        .btn-warning:hover {
+            background-color: #e69c00;
+        }
+
+        .carousel-indicators [data-bs-target] {
+            background-color: #ffffff;
+            width: 12px;
+            height: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-indicators .active {
+            background-color: #ffbe33;
+            width: 17px;
+            height: 17px;
+        }
+
+        .carousel-item {
+            min-height: 80vh;
+        }
+
+        .offer-image {
+            width: 150px;
+            height: 150px;
+        }
+
+        .offer-image img:hover,
+        .card-image img:hover {
+            transform: scale(1.10);
+            transition: transform 0.3s ease;
+        }
+
+
+        .bg-dark {
+            background-color: #222831 !important;
+        }
+
+        .menu-nav .nav-item .nav-link {
+            color: #222831;
+        }
+
+        .menu-nav .nav-item .nav-link.active {
+            background-color: #222831;
+            color: #ffffff;
+        }
+
+        .card-image {
+            height: 280px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card-image img {
+            width: 180px;
+        }
+
+        .accordion-button {
+            background-color: #222831 !important;
+            color: #fff !important;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #ffbe33 !important;
+            color: #fff !important;
+        }
+
+        .accordion-button::after {
+            filter: brightness(0) invert(1);
+        }
+
+        .accordion-body {
+            background-color: #222831;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="home-section" class="hero-section">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand text-white fw-bold fs-2 cursive-font" href="#">Savor</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item mx-3">
+                            <a class="nav-link text-white fw-medium active" aria-current="page"
+                                href="#home-section">HOME</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link text-white fw-medium" href="#menu-section">MENU</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link text-white fw-medium" href="#about-section">ABOUT</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link text-white fw-medium" href="#book-table-section">BOOK TABLE</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link text-white fw-medium" href="#faq-section">FAQ</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav d-flex flex-row align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signInModal"><i
+                                    class="bi bi-box-arrow-in-right  text-light fs-3 fw-bold"></i></a>
+                        </li>
+                        <li class="nav-item ms-3">
+                            <a href="#" class="btn btn-warning text-light py-2 px-5 rounded-pill">Order Online</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators d-flex align-items-center">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0"
+                    class="active border border-0 rounded-circle me-2" aria-current="true"
+                    aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"
+                    class="border border-0 rounded-circle me-2" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"
+                    class="border border-0 rounded-circle me-2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="carousel-caption d-flex align-items-center start-0 end-0 text-start h-100 w-100 mb-3">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-12 col-md-6 text-start">
+                                    <h1 class="display-5 fw-bold cursive-font">Fast Food Restaurant</h1>
+                                    <p class="fs-5">Discover a culinary journey where every dish is crafted with passion
+                                        and precision. Experience the taste of excellence with our exquisite menu,
+                                        designed to delight every palate.</p>
+                                    <a href="#" class="btn btn-warning text-light py-2 px-5 rounded-pill">Order Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-caption d-flex align-items-center start-0 end-0 text-start h-100 w-100 mb-3">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-12 col-md-6 text-start">
+                                    <h1 class="display-5 fw-bold cursive-font">Fast Food Restaurant</h1>
+                                    <p class="fs-5">Indulge in our classic favorites and signature dishes, prepared with
+                                        the freshest ingredients. Our commitment to quality and flavor ensures a
+                                        memorable dining experience for you and your loved ones.</p>
+                                    <a href="#" class="btn btn-warning text-light py-2 px-5 rounded-pill">Order Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-caption d-flex align-items-center start-0 end-0 text-start h-100 w-100 mb-3">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-12 col-md-6 text-start">
+                                    <h1 class="display-5 fw-bold cursive-font">Fast Food Restaurant</h1>
+                                    <p class="fs-5">Welcome to a world of flavor! From sizzling burgers to delightful
+                                        pizzas, our menu is a celebration of taste. Enjoy fast, fresh, and delicious
+                                        food right at your fingertips.</p>
+                                    <a href="#" class="btn btn-warning text-light py-2 px-5 rounded-pill">Order Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="container py-5">
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-6 col-12">
+                <div
+                    class="card bg-dark text-white p-4 d-flex flex-column flex-sm-column flex-md-row flex-lg-row align-items-center">
+                    <div class="offer-image border border-warning border-5 rounded-circle overflow-hidden">
+                        <img src="images/o1.jpg" alt="Tasty Thursdays"
+                            class="img-fluid rounded-circle object-fit-cover">
+                    </div>
+                    <div class="ms-md-4 mt-4 mt-md-2">
+                        <h3 class="cursive-font">Tasty Thursdays</h3>
+                        <h2 class="display-5 cursive-font">20% <span class="fs-5 text-white">Off</span></h2>
+                        <a href="#" class="btn btn-warning text-light py-2 px-4 rounded-pill mt-2">
+                            Order Now <i class="bi bi-basket3-fill fs-5 ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-12">
+                <div
+                    class="card bg-dark text-white p-4 d-flex flex-column flex-sm-column flex-md-row flex-lg-row align-items-center">
+                    <div class="offer-image border border-warning border-5 rounded-circle overflow-hidden">
+                        <img src="images/o2.jpg" alt="Pizza Days" class="img-fluid rounded-circle object-fit-cover">
+                    </div>
+                    <div class="ms-md-4 mt-4 mt-md-2">
+                        <h3 class="cursive-font">Pizza Days</h3>
+                        <h2 class="display-5 cursive-font">15% <span class="fs-5 text-white">Off</span></h2>
+                        <a href="#" class="btn btn-warning text-light py-2 px-4 rounded-pill mt-2">
+                            Order Now <i class="bi bi-basket3-fill fs-5 ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="menu-section" class="menu-section py-5">
+        <div class="container">
+            <h2 class="text-center display-5 fw-bold cursive-font mb-4">Our Menu</h2>
+            <ul class="nav nav-pills justify-content-center mb-5 menu-nav" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link rounded-pill px-4 active" id="pills-burger-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-burger" type="button" role="tab" aria-controls="pills-burger"
+                        aria-selected="true">Burger</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link rounded-pill px-4" id="pills-pizza-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-pizza" type="button" role="tab" aria-controls="pills-pizza"
+                        aria-selected="false">Pizza</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link rounded-pill px-4" id="pills-pasta-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-pasta" type="button" role="tab" aria-controls="pills-pasta"
+                        aria-selected="false">Pasta</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link rounded-pill px-4" id="pills-fries-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-fries" type="button" role="tab" aria-controls="pills-fries"
+                        aria-selected="false">Fries</a>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-burger" role="tabpanel"
+                    aria-labelledby="pills-burger-tab">
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                        <div class="col">
+                            <div class="card bg-light shadow-sm border-0 rounded-4 overflow-hidden">
+                                <div class="card-image">
+                                    <img src="images/f1.png" class="img-fluid" alt="Pizza">
+                                </div>
+                                <div class="card-body bg-dark text-white">
+                                    <h5 class="card-title fw-bold">Tasty Burger</h5>
+                                    <p class="card-text text-light">A juicy beef patty grilled to perfection, topped
+                                        with melted cheese, fresh lettuce, and ripe tomatoes, all nestled in a toasted
+                                        bun. A classic for a reason.</p>
+                                </div>
+                                <div
+                                    class="card-footer bg-dark text-white d-flex justify-content-between align-items-center border-0">
+                                    <span class="fs-5">$20</span>
+                                    <button
+                                        class="btn btn-warning rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-basket3-fill fs-5 text-light"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card bg-light shadow-sm border-0 rounded-4 overflow-hidden">
+                                <div class="card-image">
+                                    <img src="images/f2.png" class="img-fluid" alt="Pizza">
+                                </div>
+                                <div class="card-body bg-dark text-white">
+                                    <h5 class="card-title fw-bold">Beef Burger</h5>
+                                    <p class="card-text text-light">Succulent beef patty seasoned with our secret blend
+                                        of spices, served with caramelized onions and a smoky BBQ sauce on a brioche
+                                        bun.</p>
+                                </div>
+                                <div
+                                    class="card-footer bg-dark text-white d-flex justify-content-between align-items-center border-0">
+                                    <span class="fs-5">$20</span>
+                                    <button
+                                        class="btn btn-warning rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-basket3-fill fs-5 text-light"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card bg-light shadow-sm border-0 rounded-4 overflow-hidden">
+                                <div class="card-image">
+                                    <img src="images/f3.png" class="img-fluid" alt="Pizza">
+                                </div>
+                                <div class="card-body bg-dark text-white">
+                                    <h5 class="card-title fw-bold">Crispy Chicken Burger</h5>
+                                    <p class="card-text text-light">A tender and crispy chicken fillet, topped with a
+                                        zesty mayonnaise and crisp pickles. A delightful alternative for a lighter, yet
+                                        flavorful meal.</p>
+                                </div>
+                                <div
+                                    class="card-footer bg-dark text-white d-flex justify-content-between align-items-center border-0">
+                                    <span class="fs-5">$20</span>
+                                    <button
+                                        class="btn btn-warning rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-basket3-fill fs-5 text-light"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-pizza" role="tabpanel" aria-labelledby="pills-pizza-tab">
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                        <div class="col">
+                            <div class="card bg-light shadow-sm border-0 rounded-4 overflow-hidden">
+                                <div class="card-image">
+                                    <img src="images/f4.png" class="img-fluid" alt="Pizza">
+                                </div>
+                                <div class="card-body bg-dark text-white">
+                                    <h5 class="card-title fw-bold">Classic Margherita</h5>
+                                    <p class="card-text text-light">A timeless favorite with a thin, crispy crust, fresh
+                                        mozzarella, sweet tomato sauce, and a sprinkle of basil. Simple, elegant, and
+                                        irresistibly delicious.</p>
+                                </div>
+                                <div
+                                    class="card-footer bg-dark text-white d-flex justify-content-between align-items-center border-0">
+                                    <span class="fs-5">$20</span>
+                                    <button
+                                        class="btn btn-warning rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-basket3-fill fs-5 text-light"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card bg-light shadow-sm border-0 rounded-4 overflow-hidden">
+                                <div class="card-image">
+                                    <img src="images/f5.png" class="img-fluid" alt="Pizza">
+                                </div>
+                                <div class="card-body bg-dark text-white">
+                                    <h5 class="card-title fw-bold">Pepperoni Perfection</h5>
+                                    <p class="card-text text-light">A fiery and flavorful pizza loaded with spicy
+                                        pepperoni slices, a generous layer of mozzarella, and a robust tomato sauce. A
+                                        bold choice for a satisfying meal.</p>
+                                </div>
+                                <div
+                                    class="card-footer bg-dark text-white d-flex justify-content-between align-items-center border-0">
+                                    <span class="fs-5">$20</span>
+                                    <button
+                                        class="btn btn-warning rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-basket3-fill fs-5 text-light"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card bg-light shadow-sm border-0 rounded-4 overflow-hidden">
+                                <div class="card-image">
+                                    <img src="images/f6.png" class="img-fluid" alt="Pizza">
+                                </div>
+                                <div class="card-body bg-dark text-white">
+                                    <h5 class="card-title fw-bold">Veggie Delight</h5>
+                                    <p class="card-text text-light">A garden of fresh vegetables including bell peppers,
+                                        onions, mushrooms, and olives, all baked on a perfect crust with a savory sauce.
+                                    </p>
+                                </div>
+                                <div
+                                    class="card-footer bg-dark text-white d-flex justify-content-between align-items-center border-0">
+                                    <span class="fs-5">$20</span>
+                                    <button
+                                        class="btn btn-warning rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-basket3-fill fs-5 text-light"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-pasta" role="tabpanel" aria-labelledby="pills-pasta-tab">
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                        <div class="col">
+                            <div class="card bg-light shadow-sm border-0 rounded-4 overflow-hidden">
+                                <div class="card-image">
+                                    <img src="images/f7.png" class="img-fluid" alt="Pasta">
+                                </div>
+                                <div class="card-body bg-dark text-white">
+                                    <h5 class="card-title fw-bold">Creamy Alfredo</h5>
+                                    <p class="card-text text-light">Fettuccine pasta tossed in a rich and creamy Alfredo
+                                        sauce, made with butter, heavy cream, and Parmesan cheese. A decadent and
+                                        comforting dish.</p>
+                                </div>
+                                <div
+                                    class="card-footer bg-dark text-white d-flex justify-content-between align-items-center border-0">
+                                    <span class="fs-5">$20</span>
+                                    <button
+                                        class="btn btn-warning rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-basket3-fill fs-5 text-light"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card bg-light shadow-sm border-0 rounded-4 overflow-hidden">
+                                <div class="card-image">
+                                    <img src="images/f8.png" class="img-fluid" alt="Pasta">
+                                </div>
+                                <div class="card-body bg-dark text-white">
+                                    <h5 class="card-title fw-bold">Spaghetti Bolognese</h5>
+                                    <p class="card-text text-light">A hearty and classic dish with spaghetti pasta and a
+                                        rich, slow-cooked meat sauce made from ground beef, tomatoes, and aromatic
+                                        herbs.</p>
+                                </div>
+                                <div
+                                    class="card-footer bg-dark text-white d-flex justify-content-between align-items-center border-0">
+                                    <span class="fs-5">$20</span>
+                                    <button
+                                        class="btn btn-warning rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-basket3-fill fs-5 text-light"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-fries" role="tabpanel" aria-labelledby="pills-fries-tab">
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                        <div class="col">
+                            <div class="card bg-light shadow-sm border-0 rounded-4 overflow-hidden">
+                                <div class="card-image">
+                                    <img src="images/f9.png" class="img-fluid" alt="Fries">
+                                </div>
+                                <div class="card-body bg-dark text-white">
+                                    <h5 class="card-title fw-bold">Crispy Fries</h5>
+                                    <p class="card-text text-light">Golden, crispy French fries, perfectly salted and
+                                        served hot. The ultimate side dish for any meal.</p>
+                                </div>
+                                <div
+                                    class="card-footer bg-dark text-white d-flex justify-content-between align-items-center border-0">
+                                    <span class="fs-5">$20</span>
+                                    <button
+                                        class="btn btn-warning rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-basket3-fill fs-5 text-light"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center mt-5">
+                <a href="#" class="btn btn-warning text-light py-2 px-5 rounded-pill">View More</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about-section" class="py-5 bg-dark text-white" style="min-height: 70vh;">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-12 col-md-6 text-center order-2 order-md-1">
+                    <img src="images/about-img.png" alt="Burger" class="img-fluid" style="max-width: 300px;">
+                </div>
+                <div class="col-12 col-md-6 order-1 order-md-2">
+                    <h2 class="display-5 fw-bold cursive-font mb-4 text-center text-md-start">We Are Savor</h2>
+                    <p class="mt-4">
+                        At Savor, we believe that food is not just about sustenance; it's an experience. Our chefs
+                        meticulously select the finest local ingredients to create dishes that are both comforting and
+                        innovative. We are dedicated to providing a warm and inviting atmosphere where every guest feels
+                        like family.
+                    </p>
+                    <a href="#" class="btn btn-warning py-2 px-5 text-light rounded-pill">Read More</a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="book-table-section">
+        <div class="container py-5">
+            <h2 class="text-center display-5 fw-bold cursive-font mb-4">Book A Table</h2>
+            <div class="row g-4 align-items-stretch">
+                <div class="col-12 col-md-6 d-flex">
+                    <form class="w-100 h-100 d-flex flex-column justify-content-start">
+                        <div class="mb-3">
+                            <input type="text" class="form-control p-2" placeholder="Your Name">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control p-2" placeholder="Phone Number">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control p-2" placeholder="Your Email">
+                        </div>
+                        <div class="mb-3">
+                            <select class="form-select p-2">
+                                <option selected>How many persons?</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <input type="date" class="form-control p-2">
+                        </div>
+                        <button type="submit" class="btn btn-warning py-2 text-light rounded-pill">BOOK
+                            NOW</button>
+                    </form>
+                </div>
+                <div class="col-12 col-md-6 d-flex">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.404286121703!2d-73.99047918459424!3d40.748440379328225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2593b4f620f3d%3A0x6b1c0a1a0b1c0a1a!2sEmpire%20State%20Building!5e0!3m2!1sen!2sua!4v1628164052345!5m2!1sen!2sua"
+                        class="border-0 rounded-3 w-100 h-100" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq-section" class="py-5 bg-dark text-white">
+        <div class="container">
+            <h2 class="text-center display-5 fw-bold cursive-font mb-4">FAQ</h2>
+            <div class="accordion accordion-flush" id="faqAccordion" data-bs-theme="dark">
+                <div class="accordion-item mb-2">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed rounded" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            How do I place an order online?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body rounded">
+                            To place an order, simply navigate to the "Order Online" button in the top right corner of
+                            the page. You will be redirected to our online ordering platform where you can browse our
+                            menu, customize your order, and complete your purchase securely.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item mb-2 rounded">
+                    <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed rounded" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            Do you offer vegetarian and vegan options?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body rounded">
+                            Yes, our menu includes a variety of vegetarian and vegan dishes. You can find them under
+                            their respective tabs in the "Our Menu" section. We are constantly expanding our offerings
+                            to cater to all dietary preferences.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item mb-2 rounded">
+                    <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed rounded" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseThree" aria-expanded="false"
+                            aria-controls="flush-collapseThree">
+                            What are your opening hours?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingThree" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body rounded">
+                            We are open seven days a week, from Monday to Sunday, from 10:00 AM to 10:00 PM. We look
+                            forward to serving you during these hours!
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item mb-2 rounded">
+                    <h2 class="accordion-header" id="flush-headingFour">
+                        <button class="accordion-button collapsed rounded" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseFour" aria-expanded="false"
+                            aria-controls="flush-collapseFour">
+                            Can I book a table in advance?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body rounded">
+                            Yes, you can easily book a table through our website. Simply fill out the form in the "Book
+                            a Table" section with your details, and we will confirm your reservation as soon as
+                            possible.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-section bg-dark text-light pt-5 pb-3">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-4 mb-4 mb-md-0 text-center">
+                    <h3 class="fw-bold cursive-font mb-3">Contact Us</h3>
+                    <p class="mb-2"><i class="bi bi-geo-alt-fill me-2"></i> Location</p>
+                    <p class="mb-2"><i class="bi bi-telephone-fill me-2"></i> Call +01 1234567890</p>
+                    <p class="mb-0"><i class="bi bi-envelope-fill me-2"></i> info@savor.com</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0 text-center">
+                    <h1 class="fw-bold cursive-font mb-3">Savor</h1>
+                    <p class="mb-3">A journey of taste, a celebration of flavor. Savor is more than just a restaurant;
+                        it's a destination where delicious food and great memories are made.</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="#" class="text-light fs-5"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-light fs-5"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-light fs-5"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-light fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-light fs-5"><i class="bi bi-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0 text-center">
+                    <h3 class="fw-bold cursive-font mb-3">Opening Hours</h3>
+                    <p class="mb-2">Monday - Sunday</p>
+                    <p class="mb-0">10:00 AM - 10:00 PM</p>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 text-center small">
+                    <p class="mb-1">© 2025 All Rights Reserved By Savor</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="signInModal" tabindex="-1" aria-labelledby="signInModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-white">
+                <div class="modal-header border-0">
+                    <h1 class="modal-title cursive-font fs-3" id="signInModalLabel">Sign In</h1>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="signInEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="signInEmail" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="signInPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="signInPassword">
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-warning text-light rounded-pill">Sign In</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer border-0 d-flex justify-content-center">
+                    <p class="text-white-50 mb-0 me-2">Don't have an account?</p>
+                    <a class="text-warning fw-bold" data-bs-target="#signUpModal" data-bs-toggle="modal"
+                        role="button">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-white">
+                <div class="modal-header border-0">
+                    <h1 class="modal-title cursive-font fs-3" id="signUpModalLabel">Sign Up</h1>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="signUpName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="signUpName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="signUpEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="signUpEmail">
+                        </div>
+                        <div class="mb-3">
+                            <label for="signUpPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="signUpPassword">
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-warning text-light rounded-pill">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer border-0 d-flex justify-content-center">
+                    <p class="text-white-50 mb-0 me-2">Already have an account?</p>
+                    <a class="text-warning text fw-bold" data-bs-target="#signInModal" data-bs-toggle="modal"
+                        role="button">Sign In</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Підключення JavaScript Bootstrap (для інтерактивних компонентів) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        xintegrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
